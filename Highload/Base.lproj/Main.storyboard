@@ -72,7 +72,66 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Jk-Hf-qpw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1650" y="352"/>
+            <point key="canvasLocation" x="1794" y="-468"/>
+        </scene>
+        <!--Hard Disk-->
+        <scene sceneID="XWt-im-2EX">
+            <objects>
+                <viewController title="Hard Disk" id="OIT-9f-kx7" customClass="HardDiskViewController" customModule="Highload" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tCx-bq-yNI"/>
+                        <viewControllerLayoutGuide type="bottom" id="7mi-9g-WmF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Q1D-ja-7Ej">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total space:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bmG-be-Ek7">
+                                <rect key="frame" x="151" y="90" width="299" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="299" id="bGu-4P-Sgo"/>
+                                    <constraint firstAttribute="height" constant="21" id="dVU-gA-gI4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Avaliable space:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wYN-wU-53w">
+                                <rect key="frame" x="151" y="129" width="299" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="299" id="Pem-bC-RWN"/>
+                                    <constraint firstAttribute="height" constant="21" id="fcD-T9-CgL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="bmG-be-Ek7" firstAttribute="top" secondItem="tCx-bq-yNI" secondAttribute="bottom" constant="26" id="EeN-OG-MId"/>
+                            <constraint firstAttribute="centerX" secondItem="bmG-be-Ek7" secondAttribute="centerX" id="fjk-x2-O99"/>
+                            <constraint firstItem="wYN-wU-53w" firstAttribute="top" secondItem="bmG-be-Ek7" secondAttribute="bottom" constant="18" id="l3P-Ec-l2Q"/>
+                            <constraint firstAttribute="centerX" secondItem="wYN-wU-53w" secondAttribute="centerX" id="oy0-0c-tsY"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Hard Disc" id="PFH-mN-W1t">
+                        <barButtonItem key="rightBarButtonItem" title="Run" id="w7V-1R-2G3">
+                            <connections>
+                                <action selector="runButtonClicked:" destination="OIT-9f-kx7" id="iJi-Zh-9jT"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="avaliableSpaceLabel" destination="wYN-wU-53w" id="4kA-xm-zkS"/>
+                        <outlet property="totalSpaceLabel" destination="bmG-be-Ek7" id="rMP-kl-yon"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dkq-13-tij" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1813" y="353"/>
         </scene>
         <!--What to simulate?-->
         <scene sceneID="kJf-wZ-iLN">
@@ -147,6 +206,9 @@
                                                 <constraint firstItem="Lpn-v6-Lga" firstAttribute="top" secondItem="Tio-Ad-bOs" secondAttribute="top" constant="11" id="poK-2b-5XF"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="OIT-9f-kx7" kind="show" id="lfv-SJ-rdk"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>

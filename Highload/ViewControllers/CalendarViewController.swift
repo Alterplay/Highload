@@ -21,15 +21,10 @@ class CalendarViewController: BaseViewController {
     @IBOutlet weak var textField: UITextField!
     
     /// The mocker
-    let calendarMocker: CalendarMocker!
-    
-    required override init(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        
-        //Instantiate the mocker
-        self.calendarMocker = CalendarMocker(delegateQueue: dispatch_get_main_queue())
-    }
-    
+    lazy var calendarMocker: CalendarMocker = CalendarMocker(delegateQueue: dispatch_get_main_queue())
+
+    //MARK:
+    //Actions
     @IBAction func runButtonClicked(sender: AnyObject) {
         self.startPopulating()
     }
@@ -43,6 +38,7 @@ class CalendarViewController: BaseViewController {
     private func startPopulating() {
         
         let eventsCount = self.textField.text.toInt()
+        
         
         self.updateUI(UIState.Working)
         self.calendarMocker.start(eventsCount!, completion: { (error:NSError?) -> Void in
