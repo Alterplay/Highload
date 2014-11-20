@@ -8,5 +8,7 @@
 
 import UIKit
 
-class InitialViewController: UITableViewController {}
+class InitialViewController: UITableViewController {
+
+}
 
