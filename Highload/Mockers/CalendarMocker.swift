@@ -103,13 +103,18 @@ class CalendarMocker: NSObject {
             for index : NSInteger in 0...eventsCount {
                 
                 let event = EKEvent(eventStore: self.eventsStore)
-                let secondsValue = index * 86000
-                let eventDate : NSDate = today.dateByAddingTimeInterval(Double(secondsValue))
+                let secondsValue = index * 86000 / 24;
+                let eventDate = today.dateByAddingTimeInterval(Double(secondsValue))
                 
+                /* Create an event */
                 event.title = NSString(format: "Event for %@", formatter.stringFromDate(eventDate))
                 event.startDate = eventDate
-                event.endDate = eventDate.dateByAddingTimeInterval(100)
+                event.endDate = eventDate.dateByAddingTimeInterval(300)
                 event.calendar = self.eventsStore.defaultCalendarForNewEvents
+                
+                /* Add the rule */
+                let rule = EKRecurrenceRule(recurrenceWithFrequency: EKRecurrenceFrequencyDaily, interval: 1, end: EKRecurrenceEnd.recurrenceEndWithEndDate(NSDate.distantFuture() as NSDate) as EKRecurrenceEnd)
+                event.addRecurrenceRule(rule)
                 
                 self.eventsStore.saveEvent(event, span: EKSpanThisEvent, commit: true, error: nil)
             }

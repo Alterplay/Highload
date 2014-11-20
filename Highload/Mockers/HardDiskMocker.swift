@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  HardDickMocker.swift
 //  Highload
 //
 //  Created by Sergii Kryvoblotskyi on 11/20/14.
@@ -8,5 +8,8 @@
 
 import UIKit
 
-class InitialViewController: UITableViewController {}
-
+class HardDiskMocker: NSObject {
+ 
+    
+    
+}

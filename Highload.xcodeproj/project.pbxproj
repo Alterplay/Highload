@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A71D857A1A1E2FDD0021B697 /* HardDiskMocker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71D85791A1E2FDD0021B697 /* HardDiskMocker.swift */; };
+		A71D857C1A1E30EF0021B697 /* Mocker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71D857B1A1E30EF0021B697 /* Mocker.swift */; };
 		A72A4F7C1A1E21550059F507 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72A4F7B1A1E21550059F507 /* BaseViewController.swift */; };
 		A7596F311A1E1122002C1E6E /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7596F301A1E1122002C1E6E /* InitialViewController.swift */; };
 		A7596F331A1E113D002C1E6E /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7596F321A1E113D002C1E6E /* CalendarViewController.swift */; };
@@ -30,6 +32,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A71D85791A1E2FDD0021B697 /* HardDiskMocker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HardDiskMocker.swift; sourceTree = "<group>"; };
+		A71D857B1A1E30EF0021B697 /* Mocker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mocker.swift; sourceTree = "<group>"; };
 		A72A4F7B1A1E21550059F507 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		A7596F301A1E1122002C1E6E /* InitialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		A7596F321A1E113D002C1E6E /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
@@ -67,6 +71,8 @@
 			isa = PBXGroup;
 			children = (
 				A7596F341A1E131F002C1E6E /* CalendarMocker.swift */,
+				A71D85791A1E2FDD0021B697 /* HardDiskMocker.swift */,
+				A71D857B1A1E30EF0021B697 /* Mocker.swift */,
 			);
 			path = Mockers;
 			sourceTree = "<group>";
@@ -238,8 +244,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A71D857A1A1E2FDD0021B697 /* HardDiskMocker.swift in Sources */,
 				A72A4F7C1A1E21550059F507 /* BaseViewController.swift in Sources */,
 				A7596F331A1E113D002C1E6E /* CalendarViewController.swift in Sources */,
+				A71D857C1A1E30EF0021B697 /* Mocker.swift in Sources */,
 				A7E787BF1A1E061900AE99A4 /* AppDelegate.swift in Sources */,
 				A7596F361A1E1684002C1E6E /* CalendarMocker.swift in Sources */,
 				A7596F311A1E1122002C1E6E /* InitialViewController.swift in Sources */,
