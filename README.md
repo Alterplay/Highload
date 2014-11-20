@@ -14,3 +14,7 @@ The tool for testing highload environments
 1. Add/Remove people to the AddressBook
 2. Use CPU to >=100% ? 
 3. Use as mach RAM is possible ?
+
+
+###Screenshot:
+<img width=320 src="https://raw.githubusercontent.com/Alterplay/Highload/master/screenshot.png">
