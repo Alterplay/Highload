@@ -13,7 +13,7 @@ The tool for testing highload environments
 
 1. Add/Remove people to the AddressBook
 2. Use CPU to >=100% ? 
-3. Use as mach RAM is possible ?
+3. Use as much RAM is possible ?
 
 
 ###Screenshot:
