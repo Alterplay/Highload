@@ -43,16 +43,18 @@ class HardDiskMocker: NSObject {
     /**
     Will start filling the disk
     */
-    func fillTheDisc(tick:() -> Void) {
+    func fillTheDiscWithLimit(leaveLimit : Double, tick:() -> Void) {
         
         dispatch_async(self.privateQueue, { () -> Void in
             
             let info : NSDictionary = self.diskInformation()!
             var avaliable : NSNumber = info[NSFileSystemFreeSize] as NSNumber
-            let blocksLeft = avaliable.doubleValue / self.dataBlockLenght
-
+            var fillSize = avaliable.doubleValue - leaveLimit
+            if (fillSize < 0) {return}
+            var blocksLeft = fillSize / self.dataBlockLenght
+            
             for theIndex in 0...Int64(blocksLeft / 2000) {
-
+                
                 let uuid : NSUUID = NSUUID()
                 let uuidString = uuid.UUIDString
                 let path = NSString(format: "%@/%@", self.diskPath(), uuidString)
@@ -74,8 +76,12 @@ class HardDiskMocker: NSObject {
             
             let stillInfo : NSDictionary = self.diskInformation()!
             avaliable = stillInfo[NSFileSystemFreeSize] as NSNumber
+            fillSize = avaliable.doubleValue - leaveLimit
+            if (fillSize < 0) {return}
+            blocksLeft = fillSize / self.dataBlockLenght
+
             
-            for index in 0...Int64(avaliable.doubleValue / self.dataBlockLenght) {
+            for index in 0...Int64(blocksLeft / self.dataBlockLenght) {
                 
                 let uuid : NSUUID = NSUUID()
                 let uuidString = uuid.UUIDString
@@ -93,6 +99,7 @@ class HardDiskMocker: NSObject {
             }
         })
     }
+
     
     //MARK: private
     
